@@ -9,6 +9,8 @@ namespace RegexPractice
     {
         const string NAME_FORMAT = "^[A-Z]{1}[a-z]{2,}$";
         const string EMAIL_ID_FORMAT = "^[A-Z0-9a-z]{1,}([.#$^_-][A-Za-z0-9]+)?[@][A-Za-z]{2,}[.][A-Za-z]{2,3}([.][a-zA-Z]{2})?$";
+        const string MOBILE_NUMBER_FORMAT = "^[0-9]{2}[ ][6-9][0-9]{9}$";
+
         public void FirstNameValidation(string firstName)
         {
             if (Regex.IsMatch(firstName, NAME_FORMAT))
@@ -35,6 +37,15 @@ namespace RegexPractice
                 return;
             }
             Console.WriteLine("Entered email is not as per requirements");
+        }
+        public void MobileNumberValidation(string mobileNumber)
+        {
+            if (Regex.IsMatch(mobileNumber, MOBILE_NUMBER_FORMAT))
+            {
+                Console.WriteLine("Entered Mobile number is as per requirements");
+                return;
+            }
+            Console.WriteLine("Entered Mobile number is not as per requirements");
         }
     }
 }
