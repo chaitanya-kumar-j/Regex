@@ -8,9 +8,9 @@ namespace RegexPractice
     class UserRegistration
     {
         const string NAME_FORMAT = "^[A-Z]{1}[a-z]{2,}$";
-        const string EMAIL_ID_FORMAT = "^[A-Z0-9a-z]{1,}([.#$^_-][A-Za-z0-9]+)?[@][A-Za-z]{2,}[.][A-Za-z]{2,3}([.][a-zA-Z]{2})?$";
+        const string EMAIL_ID_FORMAT = "^[A-Z0-9a-z]{1,}([.#$^_-][A-Za-z0-9]+)?[@][A-Za-z]{2,}[.][A-Za-z]{2,3}([.][a-zA-Z]{2,3})?$";
         const string MOBILE_NUMBER_FORMAT = "^[0-9]{2}[ ][6-9][0-9]{9}$";
-        const string PASSWORD_FORMAT = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})$";
+        const string PASSWORD_FORMAT = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9]){1}.{8,}$";
 
         public void FirstNameValidation(string firstName)
         {

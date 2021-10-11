@@ -11,7 +11,7 @@ namespace RegexPractice
             bool isRun = true;
             while (isRun)
             {
-                string emailsFilePath = @"G:\BridgeLabz\Regex\RegexPractice\ValidEmailsList.txt";
+                string emailsFilePath = @"G:\BridgeLabz\Regex\RegexPractice\EmailsList.txt";
                 UserRegistration user = new UserRegistration();
                 Console.WriteLine("Select Program Option: (1. First name Validation, 2. Last name Validation, 3. Email validation" +
                     "\n4. Mobile number validation, 5. Password validation)");
@@ -57,7 +57,7 @@ namespace RegexPractice
                         user.MobileNumberValidation(mobileNumber);
                         break;
                     case 5:
-                        Console.WriteLine("Enter password of atleast 8 characters:");
+                        Console.WriteLine("Enter password of atleast 1 Upper case letter, 1 lower case letter, 1 digit and with minimum 8 characters:");
                         string password = Console.ReadLine();
                         user.PasswordValidation(password);
                         break;
