@@ -1,5 +1,7 @@
 using NUnit.Framework;
 using RegexPractice;
+using System;
+using System.IO;
 
 namespace UserRegistrationTesting
 {
@@ -79,6 +81,28 @@ namespace UserRegistrationTesting
             string testPassword = "Abcd_abcd";
             bool result = new UserRegistration().PasswordValidation(testPassword);
             Assert.AreEqual(false, result);
+        }
+        string emailsFilePath = @"G:\BridgeLabz\Regex\RegexPractice\EmailsList.txt";
+        [Test]
+        public void GivenListOfEmailIdsInCorrectFormat_WhenEmailValidation_ThenShouldReturnTrueForEachTime()
+        {
+            string[] validEmailList = File.ReadAllLines(emailsFilePath)[0].Split(",");
+            foreach (string testEmail in validEmailList)
+            {
+                
+                bool result = new UserRegistration().EmailValidation(testEmail);
+                Assert.AreEqual(true, result);
+            }
+        }
+        [Test]
+        public void GivenListOfEmailIdsInWrongFormat_WhenEmailValidation_ThenShouldReturnFalseForEachTime()
+        {
+            string[] inValidEmailList = File.ReadAllLines(emailsFilePath)[1].Split(",");
+            foreach (string testEmail in inValidEmailList)
+            {
+                bool result1 = new UserRegistration().EmailValidation(testEmail);
+                Assert.AreEqual(false, result1);
+            }
         }
     }
 }

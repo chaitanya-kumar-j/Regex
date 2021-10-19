@@ -34,6 +34,7 @@ namespace RegexPractice
         }
         public bool EmailValidation(string emailId)
         {
+            Console.WriteLine(emailId);
             if (Regex.IsMatch(emailId, EMAIL_ID_FORMAT))
             {
                 Console.WriteLine("Entered email is as per requirements");
