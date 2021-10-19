@@ -19,8 +19,7 @@ namespace RegexPractice
                 Console.WriteLine("Entered firstname is as per requirements");
                 return true;
             }
-            Console.WriteLine("Entered firstname is not as per requirements");
-            return false;
+            throw new CustomExceptions(CustomExceptions.ExceptionType.INVALID_FIRSTNAME, "Entered firstname is not as per requirements");
         }
         public bool LastNameValidation(string lastName)
         {
@@ -29,8 +28,7 @@ namespace RegexPractice
                 Console.WriteLine("Entered lastname is as per requirements");
                 return true;
             }
-            Console.WriteLine("Entered lastname is not as per requirements");
-            return false;
+            throw new CustomExceptions(CustomExceptions.ExceptionType.INVALID_LASTNAME, "Entered lastname is not as per requirements");
         }
         public bool EmailValidation(string emailId)
         {
@@ -40,8 +38,7 @@ namespace RegexPractice
                 Console.WriteLine("Entered email is as per requirements");
                 return true;
             }
-            Console.WriteLine("Entered email is not as per requirements");
-            return false;
+            throw new CustomExceptions(CustomExceptions.ExceptionType.INVALID_EMAIL, "Entered email is not as per requirements");
         }
         public bool MobileNumberValidation(string mobileNumber)
         {
@@ -50,8 +47,7 @@ namespace RegexPractice
                 Console.WriteLine("Entered Mobile number is as per requirements");
                 return true;
             }
-            Console.WriteLine("Entered Mobile number is not as per requirements");
-            return false;
+            throw new CustomExceptions(CustomExceptions.ExceptionType.INVALID_MOBILENUMBER, "Entered Mobile number is not as per requirements");
         }
         public bool PasswordValidation(string password)
         {
@@ -60,8 +56,7 @@ namespace RegexPractice
                 Console.WriteLine("Entered Password is as per requirements");
                 return true;
             }
-            Console.WriteLine("Entered Password is not as per requirements");
-            return false;
+            throw new CustomExceptions(CustomExceptions.ExceptionType.INVALID_PASSWORD, "Entered Password is not as per requirements");
         }
     }
 }
